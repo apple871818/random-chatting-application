@@ -1,0 +1,66 @@
+.chat-background {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ddd
+}
+
+.chat-board {
+    height: 300px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.chat-bubble {
+    margin: 10px 0;
+}
+
+.chat-bubble.others {
+    text-align: left;
+}
+
+.chat-bubble.me {
+    text-align: right;
+}
+
+.chat-text.me {
+    background-color: #DCF8C6;
+}
+
+.chat-text.others {
+    background-color:#EAEAEA;
+}
+
+.input-box {
+    display: flex;
+}
+
+.input-bubble {
+    flex: 1;
+    padding: 10px;
+}
+
+.block-button {
+    background-color: red;
+    color: 'white';
+}
+
+.quit-button, .new-matching-button {
+    margin-left: 5px;
+}
+
+.chat-time {
+    font-size: 10px;
+    color: #888;
+    margin: 0 5px;
+    align-self: flex-end; /* 말풍선 바닥에 정렬 */
+}
+
+.info-box {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
