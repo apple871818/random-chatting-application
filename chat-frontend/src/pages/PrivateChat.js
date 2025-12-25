@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import './PrivateChat.css';
 
-function PrivateChat({userID}) {
+function PrivateChat() {
+    const navigate = useNavigate()
+
     // matching, chatting, blocked
     const[matchingStatus, setMatchingStatus] = useState("matching");
 
@@ -39,14 +43,14 @@ function PrivateChat({userID}) {
 
     // sending function
     function handleSendMsg() {
-        if(inputText === "") return;
+        if(inputText.trim() === "") return;
 
         // generate new msg object
         const newMsg = {
             id: msgs.length+1,
             time: getTimeStr(),
             text: inputText,
-            sender: userID
+            sender: "me"
         }
         
         setMsgs([...msgs, newMsg]);
@@ -63,8 +67,8 @@ function PrivateChat({userID}) {
     }
 
     const renderMsg = msgs.map((msg) => 
-        <div key={msg.id} className={`chat-bubble ${msg.sender === userID? 'me': 'others'}`}>
-            <span className={`chat-text ${msg.sender === userID? 'me':'others'}`}>
+        <div key={msg.id} className={`chat-bubble ${msg.sender === "me"? 'me': 'others'}`}>
+            <span className={`chat-text ${msg.sender === "me"? 'me':'others'}`}>
                 {msg.text}
             </span>
             <span className="chat-time">
@@ -122,7 +126,7 @@ function PrivateChat({userID}) {
             <div style={{marginTop: '10px'}}>
                 <button className="block-button" onClick={handleBlock}>차단</button>
                 <button className="new-matching-button" onClick={startMatching}>새로운 상대</button>
-                <button className="quit-button">나가기</button>
+                <button className="quit-button" onClick={() => navigate('/')}>나가기</button>
             </div>
         </div>
     );

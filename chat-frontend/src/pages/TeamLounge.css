@@ -1,0 +1,16 @@
+.lounge-background {
+    padding: 20px
+}
+
+.room-bubble {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.create-room-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
