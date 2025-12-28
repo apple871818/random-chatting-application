@@ -1,9 +1,8 @@
 // pages/Main.js
 import { useNavigate } from "react-router-dom";
 
-function Main() {
+function Main({user}) {
     const navigate = useNavigate();
-
     return (
         <div style={{ padding: "20px", textAlign: "center" }}>
             <h1>메인 페이지</h1>
